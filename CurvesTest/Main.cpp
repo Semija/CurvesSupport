@@ -14,7 +14,7 @@
 #define maxRadius 50
 #define minStep 1 // helix step
 #define maxStep 20
-#define T pi/2 // at what T get point and derivative coords
+#define T pi/4 // at what T get point and derivative coords
 
 
 
@@ -23,6 +23,7 @@ int main() {
 
 	// container 1 of all different random Curves
 	srand((unsigned int)time(nullptr));
+
 	vector<Curve*> CurvesContainer;
 	cout << setfill('=') << setw(80) << "All Curves Container" << setw(80) << ' ' << setfill(' ')<< endl;
 	for (int CurveIteration = 0; CurveIteration < curvesCount; ++CurveIteration) {
@@ -37,6 +38,7 @@ int main() {
 				CurvesContainer.push_back(new Helix(rand()% maxRadius + minRadius, rand() % maxStep + minStep));
 				break;
 		}
+
 		Point tmpPoint;
 		Point tmpDerivative;
 		// if Circle

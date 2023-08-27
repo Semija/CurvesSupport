@@ -42,33 +42,33 @@ Point Circle::GetPoint(double T) {
 }
 
 Point Circle::GetDerivative(double T) {
-	double x = -radius * std::sin(T); // x'
-	double y = radius * std::cos(T); // y'
-	Point Point(x, y, 0);
+	double dx = -radius * std::sin(T); // x'
+	double dy = radius * std::cos(T); // y'
+	Point Point(dx, dy, 0);
 	return Point;
 }
 
 // for drawing derivative relatively to point in coordinate space for 0,0 centre point
 Point Circle::GetDerivative_RelativeToPoint(double T) {
-	double x = -(radius * std::sin(T)) + (radius * std::cos(T));  // x' + x;
-	double y =  (radius * std::cos(T)) + (radius * std::sin(T)); // y' + y;
-	Point Point(x, y, 0);
+	double dx = -(radius * std::sin(T)) + (radius * std::cos(T));  // x' + x;
+	double dy =  (radius * std::cos(T)) + (radius * std::sin(T)); // y' + y;
+	Point Point(dx, dy, 0);
 	return Point;
 }
 
 // for drawing derivative in coordinate space from centre point
 Point Circle::GetDerivative_RelativeToCentre(double T) {
-	double x = -(radius * std::sin(T)) + centre.x;  // x' + centre.x; 
-	double y =  (radius * std::cos(T)) + centre.y; // y' + centre.y;
-	Point Point(x, y, 0);
+	double dx = -(radius * std::sin(T)) + centre.x;  // x' + centre.x; 
+	double dy =  (radius * std::cos(T)) + centre.y; // y' + centre.y;
+	Point Point(dx, dy, 0);
 	return Point;
 }
 
 // for drawing derivative in coordinate space
 Point Circle::GetDerivative_RelativeToPoint_AndCentre(double T) {
-	double x = -(radius * std::sin(T)) + (radius * std::cos(T)) + centre.x;  // x'+ x + centre.x; 
-	double y =  (radius * std::cos(T)) + (radius * std::sin(T)) + centre.y; // y'+ y + centre.y;
-	Point Point(x, y, 0);
+	double dx = -(radius * std::sin(T)) + (radius * std::cos(T)) + centre.x;  // x'+ x + centre.x; 
+	double dy =  (radius * std::cos(T)) + (radius * std::sin(T)) + centre.y; // y'+ y + centre.y;
+	Point Point(dx, dy, 0);
 	return Point;
 }
 
@@ -97,33 +97,33 @@ Point Ellipse::GetPoint(double T) {
 }
 
 Point Ellipse::GetDerivative(double T) {
-	double x = -radius * std::sin(T); //x'
-	double y =  radius2 * std::cos(T); //y'
-	Point Point(x, y, 0);
+	double dx = -radius * std::sin(T); //x'
+	double dy =  radius2 * std::cos(T); //y'
+	Point Point(dx, dy, 0);
 	return Point;
 }
 
 // for drawing derivative relatively to point in coordinate space for 0,0 centre point
 Point Ellipse::GetDerivative_RelativeToPoint(double T) {
-	double x = -(radius * std::sin(T)) + (radius * std::cos(T));  // x' + x;
-	double y =  (radius2 * std::cos(T)) + (radius2 * std::sin(T)); // y' + y;
-	Point Point(x, y, 0);
+	double dx = -(radius * std::sin(T)) + (radius * std::cos(T));  // x' + x;
+	double dy =  (radius2 * std::cos(T)) + (radius2 * std::sin(T)); // y' + y;
+	Point Point(dx, dy, 0);
 	return Point;
 }
 
 // for drawing derivative in coordinate space from centre point
 Point Ellipse::GetDerivative_RelativeToCentre(double T) {
-	double x = -(radius * std::sin(T)) + centre.x;  // x' + centre.x; 
-	double y =  (radius2 * std::cos(T)) + centre.y; // y' + centre.y;
-	Point Point(x, y, 0);
+	double dx = -(radius * std::sin(T)) + centre.x;  // x' + centre.x; 
+	double dy =  (radius2 * std::cos(T)) + centre.y; // y' + centre.y;
+	Point Point(dx, dy, 0);
 	return Point;
 }
 
 // for drawing derivative in coordinate space
 Point Ellipse::GetDerivative_RelativeToPoint_AndCentre(double T) {
-	double x = -(radius * std::sin(T)) + (radius * std::cos(T)) + centre.x;  // x'+ x + centre.x; 
-	double y =  (radius2 * std::cos(T)) + (radius2 * std::sin(T)) + centre.y; // y'+ y + centre.y;
-	Point Point(x, y, 0);
+	double dx = -(radius * std::sin(T)) + (radius * std::cos(T)) + centre.x;  // x'+ x + centre.x; 
+	double dy =  (radius2 * std::cos(T)) + (radius2 * std::sin(T)) + centre.y; // y'+ y + centre.y;
+	Point Point(dx, dy, 0);
 	return Point;
 }
 
@@ -155,37 +155,37 @@ Point Helix::GetPoint(double T) {
 }
 
 Point Helix::GetDerivative(double T) {
-	double x = -radius * std::sin(T);  // x'
-	double y =  radius * std::cos(T); // y'
-	double z = step;                 // z'
-	Point Point(x, y, z);
+	double dx = -radius * std::sin(T);  // x'
+	double dy =  radius * std::cos(T); // y'
+	double dz = step;                 // z'
+	Point Point(dx, dy, dz);
 	return Point;
 }
 
 // for drawing derivative relatively to point in coordinate space for 0,0 centre point
 Point Helix::GetDerivative_RelativeToPoint(double T) {
-	double x = -(radius * std::sin(T)) + (radius * std::cos(T));  // x' + x;
-	double y =  (radius * std::cos(T)) + (radius * std::sin(T)); // y' + y;
-	double z = step + (step * T);							    // z'
-	Point Point(x, y, z);
+	double dx = -(radius * std::sin(T)) + (radius * std::cos(T));  // x' + x;
+	double dy =  (radius * std::cos(T)) + (radius * std::sin(T)); // y' + y;
+	double dz = step + (step * T);							    // z'
+	Point Point(dx, dy, dz);
 	return Point;
 }
 
 // for drawing derivative in coordinate space from centre point
 Point Helix::GetDerivative_RelativeToCentre(double T) {
-	double x = -(radius * std::sin(T)) + centre.x;  // x' + centre.x; 
-	double y =  (radius * std::cos(T)) + centre.y; // y' + centre.y;
-	double z = step + centre.z;					  // z'
-	Point Point(x, y, z);
+	double dx = -(radius * std::sin(T)) + centre.x;  // x' + centre.x; 
+	double dy =  (radius * std::cos(T)) + centre.y; // y' + centre.y;
+	double dz = step + centre.z;					  // z'
+	Point Point(dx, dy, dz);
 	return Point;
 }
 
 // for drawing derivative in coordinate space
 Point Helix::GetDerivative_RelativeToPoint_AndCentre(double T) {
-	double x = -(radius * std::sin(T)) + (radius * std::cos(T)) + centre.x;  // x'+ x + centre.x; 
-	double y =  (radius * std::cos(T)) + (radius * std::sin(T)) + centre.y; // y'+ y + centre.y;
-	double z = step + (step * T) + centre.z;							   // z'
-	Point Point(x, y, z);
+	double dx = -(radius * std::sin(T)) + (radius * std::cos(T)) + centre.x;  // x'+ x + centre.x; 
+	double dy =  (radius * std::cos(T)) + (radius * std::sin(T)) + centre.y; // y'+ y + centre.y;
+	double dz = step + (step * T) + centre.z;							   // z'
+	Point Point(dx, dy, dz);
 	return Point;
 }
 
